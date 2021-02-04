@@ -3,12 +3,16 @@
 puts 'Welcome to tic-tac-toe. Do you know how to play it? (yes/no)'
 HowTo = gets.chomp.downcase
 
-if HowTo == 'yes'
-  puts "Ok, let's start the game!"
+if HowTo == 'no'
+  puts "No problem, below are the rules to understand how to play the game:
+  
+The tic-tac-toe board is a 3 X 3 grid and players alternate turns until one player is victorious or the game ends in a draw. 
+Players win by securing three consecutive positions on a row, column, or diagonal. 
+The game ends in a tie if neither player has won and all positions on the board are taken.
+  
+Are you ready? Let's start the game!"
 else
-  puts 'No problem, below are the tips to understand how to play the game:'
-  puts 'In order to win the game, a player must place three of their marks in a horizontal, vertical, or diagonal row.'
-  puts "Are you ready? Let's start the game!"
+  puts "Ok, let's start the game!"
 end
 
 # Naming players
