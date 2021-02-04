@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+#!/usr/bin/env ruby
 
 puts 'Welcome to tic-tac-toe. Do you know how to play it? (yes/no)'
 HowTo = gets.chomp.downcase
