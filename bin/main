@@ -1,15 +1,16 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 puts 'Welcome to tic-tac-toe. Do you know how to play it? (yes/no)'
 HowTo = gets.chomp.downcase
 
 if HowTo == 'no'
   puts "No problem, below are the rules to understand how to play the game:
-  
-The tic-tac-toe board is a 3 X 3 grid and players alternate turns until one player is victorious or the game ends in a draw. 
-Players win by securing three consecutive positions on a row, column, or diagonal. 
+
+The tic-tac-toe board is a 3X3 grid and players alternate turns until one is victorious or the game ends in a draw.
+Players win by securing three consecutive positions on a row, column, or diagonal.
 The game ends in a tie if neither player has won and all positions on the board are taken.
-  
+
 Are you ready? Let's start the game!"
 else
   puts "Ok, let's start the game!"
