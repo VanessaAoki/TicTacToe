@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 game_on = true
 
-# initial instructions for player
+# Initial instructions for player
 
 puts 'Welcome to tic-tac-toe. Do you know how to play it? (yes/no)'
 HowTo = gets.chomp.downcase
@@ -20,33 +20,39 @@ player1 = gets.chomp
 puts "Ok, player 'O', what's your name? "
 player2 = gets.chomp
 
-while game_on
-  # loop for each move
-  puts "#{player1}, you must choose your move: "
+board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+puts "#{player1}, you must choose your move: "
+
+while game_on do
   move = gets.chomp.to_i
-  board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  if move do 
-    board.pop(move) 
-     puts board
-  end
-  puts "#{player2} choose your move from the above available options"
+  if board.include? move
+    delete = board.delete(move)
+    puts board.inspect      
+    puts "Choose your move from the above available options" 
+  elsif board.empty?
+    puts "Game is over"
+    break
+  else
+    puts "This is not a valid move, try again"
   end
 end
-  # First move
-puts "#{player1}, you must choose your move: "
-puts "
-   a  |  b  |  c
--------------------
-1     |     |
--------------------
-2     |     |
--------------------
-3     |     |
-"
 
-  if winner # and/or draw (the exact condition in this milestone is not important)
-    game_on = false
-  end
+
+  # First move
+# puts "#{player1}, you must choose your move: "
+# puts "
+#    a  |  b  |  c
+# -------------------
+# 1     |     |
+# -------------------
+# 2     |     |
+# -------------------
+# 3     |     |
+# "
+
+if winner # and/or draw (the exact condition in this milestone is not important)
+  game_on = false
+end
 
 
 # Game over
