@@ -23,7 +23,7 @@ puts "Ok, player 'O', what's your name? "
 player2 = gets.chomp
 
 board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-puts "#{player1}, you must choose your move: "
+  puts "#{player1}, you must choose your move: "
 
 while game_on do
   move = gets.chomp.to_i
@@ -32,8 +32,8 @@ while game_on do
     puts board.inspect      
     puts "Choose your move from the above available options" 
   elsif board.empty?
+    game_on = false
     puts "Game is over"
-    break
   else
     puts "This is not a valid move, try again"
   end
