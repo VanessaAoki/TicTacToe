@@ -76,7 +76,7 @@ def full?(*)
   board.all? { |current| current == 'x' || 'o' }
 end
 
-def  draw?
+def draw?
   !won && full?
 end
 
@@ -86,7 +86,6 @@ puts "
 Congratulations, #{@player1} is the winner!
 -------------------------------------
 -------------------------------------"
-
 
 user_tokens(tokens)
 display_board(board)
