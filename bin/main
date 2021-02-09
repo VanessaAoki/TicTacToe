@@ -80,10 +80,6 @@ end
 #   def valid_move?(index)
 #     !position_taken?(index) && index.between?(0,8)
 #   end
-
-#   def turn_count
-#     @board.count{|square| square != " " }
-#   end
 #   
 #   def turn_count
 #     count = 0
@@ -95,10 +91,6 @@ end
 
 #   def current_player
 #     turn_count % 2 == 0 ? 'X' : 'O'
-#   end
-#
-#   def current_player
-#     turn_count.even? ? "X" : "O"
 #   end
 
 #   def turn
