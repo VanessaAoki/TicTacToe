@@ -67,19 +67,17 @@ def user_move(board)
       else
         counter += 1
         display_board(board)
-        puts counter
       end
     end
   end
 end
 
-def full? (*)
+def full?(*)
   board.all? { |current| current == 'x' || 'o' }
 end
 
-
-def draw? 
- !won && full?
+def  draw?
+  !won && full?
 end
 
 puts "
