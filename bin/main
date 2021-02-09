@@ -49,8 +49,8 @@ end
 
 def player_move(board)
   puts 'Choose a number between 1 and 9...'
-  counter = 0
-  while counter <= 8
+  counter = 1
+  while counter < 9
     puts "#{$player1} is your turn"
     move = gets.chomp.to_i
     display_board(board)
@@ -67,14 +67,16 @@ def player_move(board)
       else
         counter += 1
         display_board(board)
+        puts counter
       end
     end
   end
-  puts "-------------------------------------"
-  puts "-------------------------------------"
-  puts "game over! Do you want to play again?"
-  puts "-------------------------------------"
-  puts "-------------------------------------"
+  puts "
+-------------------------------------
+-------------------------------------
+Congratulations, #{$player1} is the winner!
+-------------------------------------
+-------------------------------------"
 end
 
 user_tokens(tokens)
