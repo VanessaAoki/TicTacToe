@@ -71,6 +71,18 @@ def move(board)
       end
     end
   end
+
+  def full? (board)
+    if counter == 9
+      puts "The Game is over"
+    end
+  end
+
+  def draw? 
+    if !won && full?
+      puts "Its a Draw"
+    end
+  end
   puts "
 -------------------------------------
 -------------------------------------
