@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
-game_on = true
-
 # Initial instructions for player
+tokens = ["X", "O"]
+board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 puts 'Welcome to tic-tac-toe. Do you know how to play it? (yes/no)'
 HowTo = gets.chomp.downcase
@@ -16,27 +16,70 @@ else
 end
 
 # Naming players
-puts "First of all, insert the name of player 'X': "
-player1 = gets.chomp
-puts "Ok, player 'O', what's your name? "
-player2 = gets.chomp
+puts 'Please enter your name player1'
+$player1 = gets.chomp.capitalize
+puts "Welcome #{$player1}"
+puts 'Please enter your name player2'
+$player2 = gets.chomp.capitalize
+puts "Welcome #{$player2}"
 
-board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-puts "#{player1}, you must choose your move: "
-
-while game_on
-  move = gets.chomp.to_i
-  if board.include? move
-    board.delete(move)
-    puts board.inspect
-    puts 'Choose your move from the above available options'
-  elsif board.empty?
-    game_on = false
-    puts 'Game is over'
+# Assigning token to players
+def user_tokens(tokens)
+  puts "#{$player1} choose your destiny token X or O"
+  player1_token = gets.chomp.upcase
+  if player1_token == tokens[0]
+    (puts "#{$player1} will use #{tokens[0]} and #{$player2} will use #{tokens[1]}")
+  elsif player1_token == tokens[1]
+    (puts "#{$player1} will use #{tokens[1]} and #{$player2} will use #{tokens[0]}")
   else
-    puts 'This is not a valid move, try again'
+    puts 'Invalid token'
   end
 end
+
+puts "#{$player1} and #{$player2} Welcome to the game!"
+
+def display_board(board)
+  puts 'Tic tac toe board: '
+  puts " #{board[0]} | #{board[1]} | #{board[2]} "
+  puts '-----------'
+  puts " #{board[3]} | #{board[4]} | #{board[5]} "
+  puts '-----------'
+  puts " #{board[6]} | #{board[7]} | #{board[8]} "
+end
+
+def player_move(board)
+  puts 'Choose a number between 1 and 9...'
+  counter = 0
+  while counter <= 8
+    puts "#{$player1} is your turn"
+    move = gets.chomp.to_i
+    display_board(board)
+    if move > 9
+      puts 'You chose an invalid number, please choose again ...'
+      counter -= 1
+    else
+      counter += 1
+      puts "#{$player2} is your turn"
+      move = gets.chomp.to_i
+      if move > 9
+        puts 'You chose an invalid number, please choose again ...'
+        counter -= 1
+      else
+        counter += 1
+        display_board(board)
+      end
+    end
+  end
+  puts "-------------------------------------"
+  puts "-------------------------------------"
+  puts "game over! Do you want to play again?"
+  puts "-------------------------------------"
+  puts "-------------------------------------"
+end
+
+user_tokens(tokens)
+display_board(board)
+player_move(board)
 
 
 
