@@ -17,26 +17,26 @@ end
 
 # Naming players
 puts 'Please enter your name player1'
-$player1 = gets.chomp.capitalize
-puts "Welcome #{$player1}"
+@player1 = gets.chomp.capitalize
+puts "Welcome #{@player1}"
 puts 'Please enter your name player2'
-$player2 = gets.chomp.capitalize
-puts "Welcome #{$player2}"
+@player2 = gets.chomp.capitalize
+puts "Welcome #{@player2}"
 
 # Assigning token to players
 def user_tokens(tokens)
-  puts "#{$player1} choose your destiny token X or O"
+  puts "#{@player1} choose your destiny token X or O"
   player1_token = gets.chomp.upcase
   if player1_token == tokens[0]
-    (puts "#{$player1} will use #{tokens[0]} and #{$player2} will use #{tokens[1]}")
+    (puts "#{@player1} will use #{tokens[0]} and #{@player2} will use #{tokens[1]}")
   elsif player1_token == tokens[1]
-    (puts "#{$player1} will use #{tokens[1]} and #{$player2} will use #{tokens[0]}")
+    (puts "#{@player1} will use #{tokens[1]} and #{@player2} will use #{tokens[0]}")
   else
     puts 'Invalid token'
   end
 end
 
-puts "#{$player1} and #{$player2} Welcome to the game!"
+puts "#{@player1} and #{@player2} Welcome to the game!"
 
 def display_board(board)
   puts 'Tic tac toe board: '
@@ -51,7 +51,7 @@ def move(board)
   puts 'Choose a number between 1 and 9...'
   counter = 1
   while counter < 9
-    puts "#{$player1} is your turn"
+    puts "#{@player1} is your turn"
     move = gets.chomp.to_i
     display_board(board)
     if move > 9
@@ -59,7 +59,7 @@ def move(board)
       counter -= 1
     else
       counter += 1
-      puts "#{$player2} is your turn"
+      puts "#{@player2} is your turn"
       move = gets.chomp.to_i
       if move > 9
         puts 'You chose an invalid number, please choose again ...'
@@ -86,7 +86,7 @@ def move(board)
   puts "
 -------------------------------------
 -------------------------------------
-Congratulations, #{$player1} is the winner!
+Congratulations, #{@player1} is the winner!
 -------------------------------------
 -------------------------------------"
 end
