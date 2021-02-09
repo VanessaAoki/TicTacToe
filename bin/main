@@ -71,25 +71,27 @@ def user_move(board)
       end
     end
   end
+end
 
-  def full? (*)
-    return unless counter == 9
-      puts "The Game is over"
-    end
+def full? (*)
+  return unless counter == 9
+    puts "The Game is over"
   end
+end
 
-  def draw? 
-    return unless !won && full?
-      puts "Its a Draw"
-    end
+def draw? 
+  return unless !won && full?
+    puts "Its a Draw"
   end
-  puts "
+end
+
+puts "
 -------------------------------------
 -------------------------------------
 Congratulations, #{@player1} is the winner!
 -------------------------------------
 -------------------------------------"
-end
+
 
 user_tokens(tokens)
 display_board(board)
