@@ -84,7 +84,19 @@ end
 #   def turn_count
 #     @board.count{|square| square != " " }
 #   end
+#   
+#   def turn_count
+#     count = 0
+#     @board.each do |i|
+#       count += 1 if i == 'X' || i == 'O'
+#     end
+#     count
+#   end
 
+#   def current_player
+#     turn_count % 2 == 0 ? 'X' : 'O'
+#   end
+#
 #   def current_player
 #     turn_count.even? ? "X" : "O"
 #   end
