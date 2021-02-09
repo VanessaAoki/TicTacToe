@@ -55,14 +55,12 @@ def user_move(board)
     move = gets.chomp.to_i
     display_board(board)
     if move > 9
-      puts 'You chose an invalid number, please choose again ...'
       counter -= 1
     else
       counter += 1
       puts "#{@player2} is your turn"
       move = gets.chomp.to_i
       if move > 9
-        puts 'You chose an invalid number, please choose again ...'
         counter -= 1
       else
         counter += 1
