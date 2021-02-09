@@ -74,15 +74,12 @@ def user_move(board)
 end
 
 def full? (*)
-  return unless counter == 9
-    puts "The Game is over"
-  end
+  board.all? { |current| current == 'x' || 'o' }
 end
 
+
 def draw? 
-  return unless !won && full?
-    puts "Its a Draw"
-  end
+ !won && full?
 end
 
 puts "
