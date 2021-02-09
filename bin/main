@@ -47,7 +47,7 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-def move(board)
+def user_move(board)
   puts 'Choose a number between 1 and 9...'
   counter = 1
   while counter < 9
@@ -93,4 +93,4 @@ end
 
 user_tokens(tokens)
 display_board(board)
-move(board)
+user_move(board)
