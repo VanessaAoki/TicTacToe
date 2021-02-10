@@ -47,13 +47,16 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
+user_tokens(tokens)
+puts display_board(board)
+
 while game_on
   puts "#{@player1} is your turn"
   move = gets.chomp.to_i
-  display_board(board)
   if board.include? move
     board.delete(move)
-    puts board.inspect
+    # puts board.inspect
+    display_board(board)
     puts "#{@player2} is your turn"
     move = gets.chomp.to_i
     board.delete(move)
@@ -82,7 +85,7 @@ Congratulations, #{@player1} is the winner!
 -------------------------------------
 -------------------------------------"
 
-user_tokens(tokens)
+# user_tokens(tokens)
 display_board(board)
 # user_move(board)
 
