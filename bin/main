@@ -53,24 +53,22 @@ display_board(board)
 while !board.empty?
   puts "#{@player1} is your turn"
   move = gets.chomp.to_i
-  if (board.include? move)
+  if board.include? move
     board.delete(move)
     # puts board.inspect
     display_board(board)
     puts "#{@player2} is your turn"
     move = gets.chomp.to_i
-    if (board.include? move)
+    if board.include? move
       board.delete(move)
       # puts board.inspect
       display_board(board)
-    elsif   
-      puts 'This is not a valid move, try again'
+    elsif puts 'This is not a valid move, try again'
       counter -= 1
     end
-  elsif   
-    puts 'This is not a valid move, try again'
+  elsif puts 'This is not a valid move, try again'
     counter -= 1
-  end 
+  end
 end
 def full?(*)
   board.all? { |current| current == 'x' || 'o' }
