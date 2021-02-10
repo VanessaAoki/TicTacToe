@@ -48,25 +48,33 @@ def display_board(board)
 end
 
 user_tokens(tokens)
-puts display_board(board)
+display_board(board)
 
-while game_on
-  puts "#{@player1} is your turn"
-  move = gets.chomp.to_i
-  if board.include? move
-    board.delete(move)
-    # puts board.inspect
-    display_board(board)
-    puts "#{@player2} is your turn"
+until board.empty?
+  game_on = true
+  counter = 0
+  while game_on
+    puts "#{@player1} is your turn"
     move = gets.chomp.to_i
-    board.delete(move)
-    puts board.inspect
-    display_board(board)
-  elsif board.empty?
-    game_on = false
-    puts 'Game is over'
-  else
-    puts 'This is not a valid move, try again'
+    counter += 1
+    if (board.include? move) && counter < 5
+      board.delete(move)
+      # puts board.inspect
+      display_board(board)
+      puts "#{@player2} is your turn"
+      move = gets.chomp.to_i
+      board.delete(move)
+      puts board.inspect
+      display_board(board)
+      puts counter
+    elsif (board.include? move) && counter == "4"
+      board.delete(move)
+      # puts board.inspect
+      display_board(board)
+      game_on = false
+    else
+      puts 'This is not a valid move, try again'
+    end
   end
 end
 
@@ -78,15 +86,10 @@ def draw?
   !won && full?
 end
 
-puts "
--------------------------------------
--------------------------------------
+puts "-------------------------------------
 Congratulations, #{@player1} is the winner!
--------------------------------------
 -------------------------------------"
 
-# user_tokens(tokens)
-display_board(board)
 # user_move(board)
 
 # def user_move(board)
