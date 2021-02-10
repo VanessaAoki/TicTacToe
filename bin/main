@@ -39,7 +39,6 @@ end
 puts "#{@player1} and #{@player2} Welcome to the game!"
 
 def display_board(board)
-  puts 'Tic tac toe board: '
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts '-----------'
   puts " #{board[3]} | #{board[4]} | #{board[5]} "
@@ -50,31 +49,30 @@ end
 user_tokens(tokens)
 display_board(board)
 
-until board.empty?
-  game_on = true
-  counter = 0
-  while game_on
-    puts "#{@player1} is your turn"
+game_on = true
+counter = 0
+while game_on
+  puts "#{@player1} is your turn"
+  move = gets.chomp.to_i
+  counter += 1
+  if (board.include? move) && counter <= 4
+    board.delete(move)
+    # puts board.inspect
+    display_board(board)
+    puts "#{@player2} is your turn"
     move = gets.chomp.to_i
-    counter += 1
-    if (board.include? move) && counter < 5
-      board.delete(move)
-      # puts board.inspect
-      display_board(board)
-      puts "#{@player2} is your turn"
-      move = gets.chomp.to_i
-      board.delete(move)
-      puts board.inspect
-      display_board(board)
-      puts counter
-    elsif (board.include? move) && counter == "4"
-      board.delete(move)
-      # puts board.inspect
-      display_board(board)
-      game_on = false
-    else
-      puts 'This is not a valid move, try again'
-    end
+    board.delete(move)
+    puts board.inspect
+    display_board(board)
+    puts counter
+  elsif counter == 5
+    board.delete(move)
+    # puts board.inspect
+    display_board(board)
+    game_on = false
+  else
+    puts 'This is not a valid move, try again'
+    counter -= 1
   end
 end
 
