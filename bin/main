@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 game_on = true
 # Initial instructions for player
 tokens = %w[X O]
@@ -49,7 +50,6 @@ end
 user_tokens(tokens)
 display_board(board)
 
-game_on = true
 counter = 0
 while game_on
   puts "#{@player1} is your turn"
@@ -62,9 +62,9 @@ while game_on
     puts "#{@player2} is your turn"
     move = gets.chomp.to_i
     board.delete(move)
-    puts board.inspect
+    # puts board.inspect
     display_board(board)
-    puts counter
+    # puts counter
   elsif counter == 5
     board.delete(move)
     # puts board.inspect
@@ -112,4 +112,3 @@ Congratulations, #{@player1} is the winner!
 #     end
 #   end
 # end
-
