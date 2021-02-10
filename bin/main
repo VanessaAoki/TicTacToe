@@ -50,7 +50,7 @@ end
 user_tokens(tokens)
 display_board(board)
 
-while !board.empty?
+until board.empty?
   puts "#{@player1} is your turn"
   move = gets.chomp.to_i
   if board.include? move
