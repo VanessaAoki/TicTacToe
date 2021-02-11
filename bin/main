@@ -8,8 +8,7 @@ player1 = gets.chomp
 puts "Now, player 2, it's your turn: "
 player2 = gets.chomp
 
-player1 = Players.new(player1, 'X')
-player2 = Players.new(player2, 'O')
+puts "Ok, #{player1} and #{player2}, let's start the game!"
 
 game = TicTacToe.new
 game.play
