@@ -53,6 +53,7 @@ class TicTacToe
   end
 
   def turn
+    display_board
     puts 'Please enter a number (1-9):'
     user_input = gets.strip
     index = input_to_index(user_input)
@@ -60,9 +61,9 @@ class TicTacToe
       token = current_player
       move(index, token)
     else
+      puts "That's an invalid move, try again: "
       turn
     end
-    display_board
   end
 
   def won?
@@ -98,6 +99,6 @@ class TicTacToe
 
   def play
     turn until over?
-    puts winner ? "Congratulations #{winner}, you WON!" : "Cat's Game!"
+    puts winner ? "Congratulations #{winner}, you WON!" : "It's a DRAW! Do you wanna play again?"
   end
 end
