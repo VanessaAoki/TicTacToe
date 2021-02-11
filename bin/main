@@ -13,16 +13,3 @@ player2 = Players.new(player2, 'O')
 
 game = TicTacToe.new
 game.play
-
-
-
-# else game.over? 
-#   if game.won?
-#     puts "Player won!"
-#     break
-#   else game.draw?
-#     puts "It's a draw!"
-#     break
-#   end
-# end
-# end
