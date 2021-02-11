@@ -1,12 +1,11 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/players'
 require_relative '../lib/game'
 
-puts "Please, type your name, player 1: "
-player1 = gets.chomp
+puts 'Please, type your name, player 1: '
+player1 = gets.chomp.capitalize!
 puts "Now, player 2, it's your turn: "
-player2 = gets.chomp
+player2 = gets.chomp.capitalize!
 
 puts "Ok, #{player1} and #{player2}, let's start the game!"
 
