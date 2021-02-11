@@ -1,108 +1,28 @@
 #!/usr/bin/env ruby
 
-# game_on = true
-# Initial instructions for player
-tokens = %w[X O]
-board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+require_relative '../lib/players'
+require_relative '../lib/game'
 
-puts 'Welcome to tic-tac-toe. Do you know how to play it? (yes/no)'
-HowTo = gets.chomp.downcase
+puts "Please, type your name, player 1: "
+player1 = gets.chomp
+puts "Now, player 2, it's your turn: "
+player2 = gets.chomp
 
-if HowTo == 'yes'
-  puts "Ok, let's start the game!"
-else
-  puts 'No problem, below are the tips to understand how to play the game:'
-  puts 'In order to win the game, a player must place three of their marks in a horizontal, vertical or diagonal row.'
-  puts "Are you ready? Let's start the game!"
-end
+player1 = Players.new(player1, 'X')
+player2 = Players.new(player2, 'O')
 
-# Naming players
-puts 'Please enter your name player1'
-@player1 = gets.chomp.capitalize
-puts "Welcome #{@player1}"
-puts 'Please enter your name player2'
-@player2 = gets.chomp.capitalize
-puts "Welcome #{@player2}"
+game = TicTacToe.new
+game.play
 
-# Assigning token to players
-def user_tokens(tokens)
-  puts "#{@player1} choose your destiny token X or O"
-  player1_token = gets.chomp.upcase
-  if player1_token == tokens[0]
-    (puts "#{@player1} will use #{tokens[0]} and #{@player2} will use #{tokens[1]}")
-  elsif player1_token == tokens[1]
-    (puts "#{@player1} will use #{tokens[1]} and #{@player2} will use #{tokens[0]}")
-  else
-    puts 'Invalid token'
-  end
-end
 
-puts "#{@player1} and #{@player2} Welcome to the game!"
 
-def display_board(board)
-  puts " #{board[0]} | #{board[1]} | #{board[2]} "
-  puts '-----------'
-  puts " #{board[3]} | #{board[4]} | #{board[5]} "
-  puts '-----------'
-  puts " #{board[6]} | #{board[7]} | #{board[8]} "
-end
-
-user_tokens(tokens)
-display_board(board)
-
-until board.empty?
-  puts "#{@player1} is your turn"
-  move = gets.chomp.to_i
-  if board.include? move
-    board.delete(move)
-    # puts board.inspect
-    display_board(board)
-    puts "#{@player2} is your turn"
-    move = gets.chomp.to_i
-    if board.include? move
-      board.delete(move)
-      # puts board.inspect
-      display_board(board)
-    elsif puts 'This is not a valid move, try again'
-      counter -= 1
-    end
-  elsif puts 'This is not a valid move, try again'
-    counter -= 1
-  end
-end
-def full?(*)
-  board.all? { |current| current == 'x' || 'o' }
-end
-
-def draw?
-  !won && full?
-end
-
-puts "-------------------------------------
-Congratulations, #{@player1} is the winner!
--------------------------------------"
-
-# user_move(board)
-
-# def user_move(board)
-#   puts 'Choose a number between 1 and 9...'
-#   counter = 1
-#   while counter < 10
-#     puts "#{@player1} is your turn"
-#     move = gets.chomp.to_i
-#     display_board(board)
-#     if move > 9
-#       counter -= 1
-#     else
-#       counter += 1
-#       puts "#{@player2} is your turn"
-#       move = gets.chomp.to_i
-#       if move > 9
-#         counter -= 1
-#       else
-#         counter += 1
-#         display_board(board)
-#       end
-#     end
+# else game.over? 
+#   if game.won?
+#     puts "Player won!"
+#     break
+#   else game.draw?
+#     puts "It's a draw!"
+#     break
 #   end
+# end
 # end
