@@ -2,9 +2,9 @@
 
 require_relative '../lib/game'
 
-puts 'Please, type your name, player 1: '
+puts 'Please, type your name, player X: '
 player1 = gets.chomp.capitalize!
-puts "Now, player 2, it's your turn: "
+puts "Now, player O, it's your turn: "
 player2 = gets.chomp.capitalize!
 
 puts "Ok, #{player1} and #{player2}, let's start the game!"

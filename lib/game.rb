@@ -86,13 +86,18 @@ class TicTacToe
   end
 
   def winner
-    if combo = won?
-      @board[combo[0]]
+    combo = won?
+    return unless combo
+
+    if combo.all? { |i| @board[i] == 'X' }
+      'X'
+    elsif combo.all? { |i| @board[i] == 'O' }
+      'O'
     end
   end
 
   def play
     turn until over?
-    puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
+    puts winner ? "Congratulations #{winner}, you WON!" : "Cat's Game!"
   end
 end
