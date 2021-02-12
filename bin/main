@@ -11,25 +11,37 @@ player2 = gets.chomp.capitalize!
 puts "Ok, #{player1} and #{player2}, let's start the game!"
 
 class Main < TicTacToe
- def turn
-   display_board
-   puts 'Please enter a number (1-9):'
-   user_input = gets.strip
-   index = input_to_index(user_input)
-   if valid_move?(index)
-    token = current_player
-    move(index, token)
-   else
-    puts "That's an invalid move, try again: "
-    turn
-   end
- end
+  def turn
+    display_board
+    if turn_count.even?
+    puts 'Player X, please make your move:'
+    user_input = gets.strip
+    index = input_to_index(user_input)
+    make_move(index)
+    else
+    puts 'Player O, please make your move:'
+    user_input = gets.strip
+    index = input_to_index(user_input)
+    make_move(index)
+    end
+  end
 
- def play
-   turn until over?
-   display_board
-   puts winner ? "Congratulations #{winner}, you WON!" : "It's a DRAW! Do you wanna play again?"
- end
+  def make_move(index)
+    if valid_move?(index)
+      print_token(index)
+    elsif !index.between?(0, 8)
+      puts "That's an invalid move, try again: "
+    else
+      puts "That position is taken, try again: "
+      turn
+    end
+  end
+
+  def play
+    turn until over?
+    display_board
+    puts winner ? "Congratulations #{winner}, you WON!" : "It's a DRAW! Do you wanna play again?"
+  end
 end
 
 

@@ -38,6 +38,11 @@ class TicTacToe < Board
     !position_taken?(index) && index.between?(0, 8)
   end
 
+  def print_token(index)
+    token = current_player
+    move(index, token)
+  end
+
   def turn_count
     count = 0
     @board.each do |i|
