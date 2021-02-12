@@ -1,7 +1,6 @@
 require_relative '../lib/board'
 # Game logic
 class TicTacToe < Board
-  
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts '----------'
@@ -69,7 +68,6 @@ class TicTacToe < Board
 
   def draw?
     full? && !won?
-
   end
 
   def over?

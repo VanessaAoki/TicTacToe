@@ -5,33 +5,31 @@ require_relative '../lib/board'
 
 puts 'Please, type your name, player X: '
 player1 = gets.chomp.capitalize!
-  while player1.nil? || player1.length < 3 
-    puts 'Please, type a valid name (+3 characters), player X: '
-    player1 = gets.chomp.capitalize!
-  end  
+while player1.nil? || player1.length < 3
+  puts 'Please, type a valid name (+3 characters), player X: '
+  player1 = gets.chomp.capitalize!
+end
 puts "Now, player O, it's your turn: "
 player2 = gets.chomp.capitalize!
-  while player2.nil? || player2.length < 3 
-    puts 'Please, type a valid name (+3 characters), player O: '
-    player2 = gets.chomp.capitalize!
-  end  
+while player2.nil? || player2.length < 3
+  puts 'Please, type a valid name (+3 characters), player O: '
+  player2 = gets.chomp.capitalize!
+end
 
 puts "Ok, #{player1} and #{player2}, let's start the game!"
 
+# Game logic
 class Main < TicTacToe
   def turn
     display_board
     if turn_count.even?
-    puts 'Player X, please make your move:'
-    user_input = gets.strip
-    index = input_to_index(user_input)
-    make_move(index)
+      puts 'Player X, please make your move:'
     else
-    puts 'Player O, please make your move:'
+      puts 'Player O, please make your move:'
+    end
     user_input = gets.strip
     index = input_to_index(user_input)
     make_move(index)
-    end
   end
 
   def make_move(index)
@@ -40,7 +38,7 @@ class Main < TicTacToe
     elsif !index.between?(0, 8)
       puts "That's an invalid move, try again: "
     else
-      puts "That position is taken, try again: "
+      puts 'That position is taken, try again: '
       turn
     end
   end
@@ -51,7 +49,6 @@ class Main < TicTacToe
     puts winner ? "Congratulations #{winner}, you WON!" : "It's a DRAW! Do you wanna play again?"
   end
 end
-
 
 TicTacToe.new
 game = Main.new
