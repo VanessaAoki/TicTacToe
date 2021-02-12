@@ -20,6 +20,8 @@ To run this project, you need a computer with Ruby installed.
 ```
 https://github.com/VanessaAoki/TicTacToe.git
 ```
+1. cd into the folder bin
+
 2. Execute the file by using `$ main` on the terminal;
 
 3. Enter your moves on the terminal and enjoy the game!
