@@ -5,8 +5,16 @@ require_relative '../lib/board'
 
 puts 'Please, type your name, player X: '
 player1 = gets.chomp.capitalize!
+  while player1.nil? || player1.length < 3 
+    puts 'Please, type a valid name (+3 characters), player X: '
+    player1 = gets.chomp.capitalize!
+  end  
 puts "Now, player O, it's your turn: "
 player2 = gets.chomp.capitalize!
+  while player2.nil? || player2.length < 3 
+    puts 'Please, type a valid name (+3 characters), player O: '
+    player2 = gets.chomp.capitalize!
+  end  
 
 puts "Ok, #{player1} and #{player2}, let's start the game!"
 
