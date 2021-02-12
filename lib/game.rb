@@ -1,9 +1,7 @@
+require_relative '../lib/board'
 # Game logic
-class TicTacToe
-  def initialize(_board = nil)
-    @board = Array.new(9, ' ')
-  end
-
+class TicTacToe < Board
+  
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts '----------'
@@ -80,6 +78,7 @@ class TicTacToe
 
   def draw?
     full? && !won?
+
   end
 
   def over?
@@ -99,6 +98,7 @@ class TicTacToe
 
   def play
     turn until over?
+    display_board
     puts winner ? "Congratulations #{winner}, you WON!" : "It's a DRAW! Do you wanna play again?"
   end
 end
