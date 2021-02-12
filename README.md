@@ -28,7 +28,7 @@ https://github.com/VanessaAoki/TicTacToe.git
 
 #### Live server:
 
-1. If you prefer, you can run the game on your web browser by clicking on this [link](https://repl.it/@VanessaAoki/TicTacToe#main.rb);
+1. If you prefer, you can run the game on your web browser by clicking on this [link](https://repl.it/@VanessaAoki/TicTacToe#bin/main.rb);
 
 2. Click on the green button that says 'Run' at the top of the page to start the tic tac toe game;
 
