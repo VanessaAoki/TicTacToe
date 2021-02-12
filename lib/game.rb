@@ -50,20 +50,6 @@ class TicTacToe < Board
     turn_count.even? ? 'X' : 'O'
   end
 
-  def turn
-    display_board
-    puts 'Please enter a number (1-9):'
-    user_input = gets.strip
-    index = input_to_index(user_input)
-    if valid_move?(index)
-      token = current_player
-      move(index, token)
-    else
-      puts "That's an invalid move, try again: "
-      turn
-    end
-  end
-
   def won?
     WIN_COMBINATIONS.any? do |combo|
       if position_taken?(combo[0]) && @board[combo[0]] == @board[combo[1]] && @board[combo[1]] == @board[combo[2]]
@@ -94,11 +80,5 @@ class TicTacToe < Board
     elsif combo.all? { |i| @board[i] == 'O' }
       'O'
     end
-  end
-
-  def play
-    turn until over?
-    display_board
-    puts winner ? "Congratulations #{winner}, you WON!" : "It's a DRAW! Do you wanna play again?"
   end
 end
