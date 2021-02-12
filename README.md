@@ -53,7 +53,7 @@ https://github.com/VanessaAoki/TicTacToe.git
 ## Screenshot of the output
 
 ![screenshot](./screen_shots/win.png)
-![screenshot](.screen_shots/draw.png)
+![screenshot](./screen_shots/draw.png)
 ## Built With
 
 - Ruby
