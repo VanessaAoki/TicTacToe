@@ -50,7 +50,10 @@ https://github.com/VanessaAoki/TicTacToe.git
 
 4. The end games in a tie if neither player has won and all positions on the board are taken.
 
+## Screenshot of the output
 
+![screenshot](./screen_shots/win.png)
+![screenshot](.screen_shots/draw.png)
 ## Built With
 
 - Ruby
