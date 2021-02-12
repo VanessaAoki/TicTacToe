@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/game'
+require_relative '../lib/board'
 
 puts 'Please, type your name, player X: '
 player1 = gets.chomp.capitalize!
