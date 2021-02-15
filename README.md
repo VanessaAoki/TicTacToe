@@ -20,11 +20,11 @@ To run this project, you need a computer with Ruby installed.
 ```
 https://github.com/VanessaAoki/TicTacToe.git
 ```
-1. cd into the folder bin
+2. Type  `$ cd bin` to move to the bin folder;
 
-2. Execute the file by using `$ main` on the terminal;
+3. Execute the file by using `$ main` on the terminal;
 
-3. Enter your moves on the terminal and enjoy the game!
+4. Enter your moves on the terminal and enjoy the game!
 
 #### Live server:
 
@@ -32,7 +32,12 @@ https://github.com/VanessaAoki/TicTacToe.git
 
 2. Click on the green button that says 'Run' at the top of the page to start the tic tac toe game;
 
-3. Enter your moves on the terminal and enjoy the game!
+3. Type  `$ cd bin` to move to the bin folder;
+
+4. Execute the file by using `$ main` on the terminal;
+
+5. Enter your moves on the terminal and enjoy the game!
+
 
 ### Game Rules
 
@@ -52,8 +57,13 @@ https://github.com/VanessaAoki/TicTacToe.git
 
 ## Screenshot of the output
 
+- This is an example of a winning move:
 ![screenshot](./screen_shots/win.png)
+
+- This is an exemple of a draw game:
 ![screenshot](./screen_shots/draw.png)
+
+
 ## Built With
 
 - Ruby
