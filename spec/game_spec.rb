@@ -28,4 +28,10 @@ describe TicTacToe do
     end
   end
 
+  describe "#print_token" do
+    it "returns the player token on the board" do
+      expect(game.print_token(2)).to eql("O")
+    end
+  end
+
 end
