@@ -1,6 +1,7 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
 # TicTacToe
 This is the project #3 of the Ruby Curriculum in Microverse
-![](https://img.shields.io/badge/Microverse-blueviolet)
 
 
 ## Tic Tac Toe
