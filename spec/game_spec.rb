@@ -16,4 +16,10 @@ describe TicTacToe do
     end
   end
 
+  describe "#position_taken?" do
+    it "return false if the position on the board is empty" do
+      expect(game.position_taken?(1)).to eql(false)
+    end
+  end
+
 end
