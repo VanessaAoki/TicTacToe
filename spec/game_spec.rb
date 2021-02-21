@@ -17,8 +17,14 @@ describe TicTacToe do
   end
 
   describe "#position_taken?" do
-    it "return false if the position on the board is empty" do
+    it "returns false if the position on the board is empty" do
       expect(game.position_taken?(1)).to eql(false)
+    end
+  end
+
+  describe "#valid_move?" do
+    it "returns true if the position is not taken and user_input is an integer between 0 and 8" do
+      expect(game.valid_move?(10)).to eql(false)
     end
   end
 
