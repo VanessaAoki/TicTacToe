@@ -23,8 +23,12 @@ describe TicTacToe do
   end
 
   describe "#valid_move?" do
-    it "returns true if the position is not taken and user_input is an integer between 0 and 8" do
-      expect(game.valid_move?(10)).to eql(false)
+    it "returns true if the position is not taken" do
+      expect(game.valid_move?(1)).to eql(true)
+    end
+
+    it "returns true if the user_input is an integer between 0 and 8" do
+      expect(game.valid_move?(8)).to eql(true)
     end
   end
 
