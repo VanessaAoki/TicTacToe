@@ -2,7 +2,7 @@
 
 # TicTacToe
 
-This project consists of a Ruby version of the game [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe).
+This project consists of a Ruby version of the [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe) game.
 
 ## Getting Started
 
