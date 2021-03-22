@@ -1,10 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # TicTacToe
-This is the project #3 of the Ruby Curriculum in Microverse
-
-
-## Tic Tac Toe
 
 This project consists of a Ruby version of the game [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe).
 
